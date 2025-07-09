@@ -20,7 +20,8 @@ import {
   Settings,
   ShowerHead,
   Thermometer,
-  ToiletIcon
+  ToiletIcon,
+  AmbulanceIcon
 } from "lucide-react";
 
 const galleryImages = [
@@ -77,7 +78,7 @@ export default function PlumbingServicesPage() {
           alt="E Plumbing and Sewer Logo"
           className="h-32 w-auto object-contain"
         />
-        <div className="flex items-center gap-4">
+        <div className="flex flex-col sm:flex-row sm:items-center sm:gap-4 text-center sm:text-left">
           <Dialog open={isContactOpen} onOpenChange={setIsContactOpen}>
             <DialogTrigger asChild>
               <Button className="bg-blue-700 text-white text-sm" onClick={() => setIsContactOpen(true)}>
@@ -99,7 +100,9 @@ export default function PlumbingServicesPage() {
               </form>
             </DialogContent>
           </Dialog>
-          <span className="text-md">Call Us: (314) 766-0395</span>
+          <a href="tel:3147660395" className="text-md whitespace-nowrap hover:underline">
+            Call Us: (314) 766-0395
+          </a>
         </div>
       </header>
 
@@ -123,7 +126,7 @@ export default function PlumbingServicesPage() {
               <DialogHeader>
                 <DialogTitle>Schedule a Service</DialogTitle>
                 <DialogDescription>
-                  Fill out the form below to book a plumbing service.
+                  Fill out the form below to book a plumbing service. Selected date is tentative and will be confirmed by our team.
                 </DialogDescription>
               </DialogHeader>
               <form onSubmit={handleScheduleSubmit} className="grid gap-4 mt-4">
@@ -165,10 +168,27 @@ export default function PlumbingServicesPage() {
           </Dialog>
         </div>
       </section>
+      {/* About Section */}
+      <section className="py-16 px-4 bg-white text-gray-800">
+        <div className="max-w-4xl mx-auto text-center">
+          <h3 className="text-3xl font-bold mb-6 text-blue-700">Locally owned and operated.</h3>
+          <p className="text-lg mb-4">
+            E Plumbing & Sewer is a full-service plumbing company based in St. Louis, Missouri.
+            Whether it’s an emergency call or a renovation, all customers are treated as though they were family.
+          </p>
+          <p className="text-lg mb-4">
+            We aim to establish and maintain long-term relationships with every client by providing professional and top-quality services.
+          </p>
+          <p className="text-lg mt-6 italic">
+            Egdiel Tamayo, owner of E Plumbing & Sewer, is an experienced plumber with quality service always at the top of his mind.
+            His mission is excellence from beginning to end — from accurately assessing a problem to leaving the workspace meticulously clean.
+          </p>
+        </div>
+      </section>
 
       {/* Services Section */}
       <section className="py-16 px-4 max-w-6xl mx-auto">
-        <h3 className="text-3xl font-bold text-center mb-10">Our Services</h3>
+        <h3 className="text-3xl font-bold mb-6 text-blue-700 text-center">Our Services</h3>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           <Card className="text-center p-6">
             <CardContent>
@@ -182,6 +202,13 @@ export default function PlumbingServicesPage() {
               <ShieldCheck className="mx-auto text-blue-700" size={40} />
               <h3 className="text-xl font-semibold mt-4 mb-2">New Constructions</h3>
               <p>Expert plumbing solutions for new builds and renovations.</p>
+            </CardContent>
+          </Card>
+          <Card className="text-center p-6">
+            <CardContent>
+              <AmbulanceIcon className="mx-auto text-blue-700" size={40} />
+              <h3 className="text-xl font-semibold mt-4 mb-2">Emergencies</h3>
+              <p>Rapid response for urgent plumbing issues.</p>
             </CardContent>
           </Card>
           <Card className="text-center p-6">
