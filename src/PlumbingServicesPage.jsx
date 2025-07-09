@@ -1,7 +1,8 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { useEffect } from "react";
+import { useEffect, useState} from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
+import {ReviewSection} from '@/components/ReviewSection';
 
 import {
   Dialog,
@@ -33,11 +34,9 @@ const galleryImages = [
   "img6.jpeg"
 ];
 
-import { useState } from "react";
-
 export default function PlumbingServicesPage() {
   const [formData, setFormData] = useState({ name: "", email: "", date: "", message: "" });
-
+  
   // 👇 Control state for both dialogs
   const [isContactOpen, setIsContactOpen] = useState(false);
   const [isScheduleOpen, setIsScheduleOpen] = useState(false);
@@ -49,25 +48,27 @@ export default function PlumbingServicesPage() {
     setIsScheduleOpen(false); // close modal after submit
   };
 
-  const [currentSlide, setCurrentSlide] = useState(0);
+  const [currentImageSlide, setCurrentImageSlide] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentImageSlide((prev) =>
+        prev === galleryImages.length - 1 ? 0 : prev + 1
+      );
+    }, 5000); // image carousel timer
+    return () => clearInterval(interval);
+  }, [currentImageSlide]);
 
   const handlePrev = () => {
-    setCurrentSlide((prev) => (prev === 0 ? galleryImages.length - 1 : prev - 1));
+    setCurrentImageSlide((prev) => (prev === 0 ? galleryImages.length - 1 : prev - 1));
   };
 
   const handleNext = () => {
-    setCurrentSlide((prev) => (prev === galleryImages.length - 1 ? 0 : prev + 1));
+    setCurrentImageSlide((prev) => (prev === galleryImages.length - 1 ? 0 : prev + 1));
   };
 
   const [touchStartX, setTouchStartX] = useState(0);
   const [touchEndX, setTouchEndX] = useState(0);
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      handleNext();
-    }, 4000);
-    return () => clearInterval(interval);
-  }, [currentSlide]);
 
   return (
     <div className="min-h-screen bg-blue-50 text-gray-800">
@@ -76,8 +77,9 @@ export default function PlumbingServicesPage() {
         <img
           src="/images/logo.jpeg"
           alt="E Plumbing and Sewer Logo"
-          className="h-32 w-auto object-contain"
+          className="h-16 sm:h-24 md:h-32 w-auto object-contain"
         />
+
         <div className="flex flex-col sm:flex-row sm:items-center sm:gap-4 text-center sm:text-left">
           <Dialog open={isContactOpen} onOpenChange={setIsContactOpen}>
             <DialogTrigger asChild>
@@ -261,7 +263,7 @@ export default function PlumbingServicesPage() {
             <div
               className="flex transition-transform duration-700 ease-in-out"
               style={{
-                transform: `translateX(-${currentSlide * 100}%)`,
+                transform: `translateX(-${currentImageSlide * 100}%)`,
                 width: `${galleryImages.length * 100}%`,
               }}
             >
@@ -297,9 +299,9 @@ export default function PlumbingServicesPage() {
             {galleryImages.map((img, idx) => (
               <button
                 key={idx}
-                onClick={() => setCurrentSlide(idx)}
+                onClick={() => setCurrentImageSlide(idx)}
                 className={`border-2 rounded-md overflow-hidden ${
-                  idx === currentSlide ? "border-blue-700" : "border-transparent"
+                  idx === currentImageSlide ? "border-blue-700" : "border-transparent"
                 }`}
               >
                 <img
@@ -312,11 +314,14 @@ export default function PlumbingServicesPage() {
           </div>
         </div>
       </section>
+      
+      {/* Reviews Section */}
+      <ReviewSection />
 
-  {/* Footer */}
-  <footer className="bg-white py-6 text-center text-sm text-gray-500">
-        &copy; {new Date().getFullYear()} E Plumbing and Sewer, LLC. All rights reserved.
-      </footer>
-    </div>
+    {/* Footer */}
+    <footer className="bg-white py-6 text-center text-sm text-gray-500">
+          &copy; {new Date().getFullYear()} E Plumbing and Sewer, LLC. All rights reserved.
+        </footer>
+      </div>
   );
 }
