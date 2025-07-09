@@ -36,7 +36,7 @@ export function ReviewSection() {
   return (
     <section className="py-16 bg-gray-50 px-4 sm:px-8">
       <div className="max-w-3xl mx-auto text-center">
-        <h2 className="text-3xl font-bold mb-6">What Our Customers Say</h2>
+        <h2 className="text-3xl font-bold mb-6 text-blue-700">What Our Customers Say</h2>
 
         <AnimatePresence mode="wait">
           <motion.div
@@ -61,11 +61,21 @@ export function ReviewSection() {
 
         {/* Optional: Add review platform links */}
         <div className="mt-6 flex justify-center gap-4 text-blue-600 underline text-sm">
-          <a href="https://www.google.com" target="_blank" rel="noopener noreferrer">
-            Read on Google
+          <a
+            href="https://www.google.com/search?q=E+Plumbing+%26+Sewer"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-blue-600 underline"
+          >
+            View on Google
           </a>
-          <a href="https://www.yelp.com" target="_blank" rel="noopener noreferrer">
-            See Yelp Reviews
+          <a
+            href="https://www.yelp.com/search?find_desc=E+Plumbing+%26+Sewer"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-red-600 underline"
+          >
+            View on Yelp
           </a>
         </div>
       </div>
