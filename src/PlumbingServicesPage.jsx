@@ -79,7 +79,7 @@ export default function PlumbingServicesPage() {
           alt="E Plumbing and Sewer Logo"
           className="h-20 sm:h-32 w-auto object-contain"
         />
-        <div className="flex items-center gap-4">
+        <div className="flex flex-wrap sm:flex-nowrap items-center gap-2 sm:gap-4">
           <Dialog open={isContactOpen} onOpenChange={setIsContactOpen}>
             <DialogTrigger asChild>
               <Button className="bg-blue-700 text-white text-sm" onClick={() => setIsContactOpen(true)}>
