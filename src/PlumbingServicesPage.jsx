@@ -101,7 +101,14 @@ export default function PlumbingServicesPage() {
               </form>
             </DialogContent>
           </Dialog>
-          <div className="whitespace-nowrap text-md">Call Us: (314) 766-0395</div>
+          <div className="whitespace-nowrap text-md">
+            <a
+              href="tel:3147660395"
+              className="text-md text-blue-700 hover:underline whitespace-nowrap"
+            >
+              Call Us: (314) 766-0395
+            </a>
+          </div>
         </div>
       </header>
 
