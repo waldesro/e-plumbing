@@ -249,7 +249,7 @@ export default function PlumbingServicesPage() {
 
             {/* Carousel with sliding animation */}
             <div
-              className="relative w-full max-w-5xl mx-auto h-[500px] bg-black rounded-xl overflow-hidden flex items-center justify-center"
+              className="relative w-full max-h-[80vh] overflow-hidden rounded-xl flex items-center justify-center bg-white/10"
               onTouchStart={(e) => setTouchStartX(e.touches[0].clientX)}
               onTouchEnd={(e) => setTouchEndX(e.changedTouches[0].clientX)}
             >
@@ -265,7 +265,7 @@ export default function PlumbingServicesPage() {
                     key={idx}
                     src={`/images/gallery/${img}`}
                     alt={`Gallery image ${idx + 1}`}
-                    className="w-full h-full object-contain flex-shrink-0"
+                    className="w-full h-auto max-h-[80vh] object-contain mx-auto flex-shrink-0 bg-white/10 rounded-lg"
                   />
                 ))}
               </div>
