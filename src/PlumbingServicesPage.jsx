@@ -27,12 +27,32 @@ import {
 } from "lucide-react";
 
 const galleryImages = [
-  "img1.jpeg",
-  "img2.jpeg",
-  "img3.jpeg",
-  "img4.jpeg",
-  "img5.jpeg",
-  "img6.jpeg"
+  "img1.jpg",
+  "img2.jpg",
+  "img3.jpg",
+  "img4.jpg",
+  "img5.jpg",
+  "img6.jpg",
+  "img7.jpg",
+  "img8.jpg",
+  "img9.jpg",
+  "img10.jpg",
+  "img11.jpg",
+  "img12.jpg",
+  "img13.jpg",
+  "img14.jpg",
+  "img15.jpg",
+  "img16.jpg",
+  "img17.jpg",
+  "img18.jpg",
+  "img19.jpg",
+  "img20.jpg",
+  "img21.jpg",
+  "img22.jpg",
+  "img23.jpg",
+  "img24.jpg",
+  "img25.jpg",
+  "img26.jpg"
 ];
 
 export default function PlumbingServicesPage() {
@@ -120,7 +140,7 @@ export default function PlumbingServicesPage() {
           <div className="bg-white/30 backdrop-blur-md p-6 rounded-xl shadow-md inline-block mx-auto text-blue-700">
             <h2 className="text-4xl font-semibold mb-6">Reliable Plumbing Services</h2>
             <p className="text-lg mb-6 max-w-xl mx-auto">
-              From leaky faucets to full pipe installations — fast, friendly, and professional plumbing solutions.
+              From leaky faucets to full pipe installations — fast, friendly, and professional plumbing solutions in the Saint Louis area.
             </p>
             <Dialog open={isScheduleOpen} onOpenChange={setIsScheduleOpen}>
               <DialogTrigger asChild>
@@ -228,7 +248,8 @@ export default function PlumbingServicesPage() {
             <h3 className="text-3xl font-bold text-center mb-8 text-blue-700">Our Work Gallery</h3>
 
             {/* Carousel with sliding animation */}
-            <div className="relative w-full max-h-[80vh] overflow-hidden rounded-xl flex items-center justify-center bg-white/10"
+            <div
+              className="relative w-full max-w-5xl mx-auto h-[500px] bg-black rounded-xl overflow-hidden flex items-center justify-center"
               onTouchStart={(e) => setTouchStartX(e.touches[0].clientX)}
               onTouchEnd={(e) => setTouchEndX(e.changedTouches[0].clientX)}
             >
@@ -244,10 +265,8 @@ export default function PlumbingServicesPage() {
                     key={idx}
                     src={`/images/gallery/${img}`}
                     alt={`Gallery image ${idx + 1}`}
-                    className="w-full h-auto max-h-[80vh] object-contain mx-auto flex-shrink-0 bg-white/10 rounded-lg"
+                    className="w-full h-full object-contain flex-shrink-0"
                   />
-
-
                 ))}
               </div>
 
@@ -267,7 +286,7 @@ export default function PlumbingServicesPage() {
             </div>
 
             {/* Thumbnails */}
-            <div className="flex justify-center mt-6 gap-3 flex-wrap">
+            <div className="flex mt-6 gap-3 overflow-x-auto px-2 scrollbar-hide">
               {galleryImages.map((img, idx) => (
                 <button
                   key={idx}
