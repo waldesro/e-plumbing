@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import { useEffect, useState } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { ReviewSection } from '@/components/ReviewSection';
+import { InlineWidget } from "react-calendly";
 
 import {
   Dialog,
@@ -133,45 +134,10 @@ export default function PlumbingServicesPage() {
               <DialogContent className="max-w-lg">
                 <DialogHeader>
                   <DialogTitle>Schedule a Service</DialogTitle>
-                  <DialogDescription>
-                    Fill out the form below to book a plumbing service. Selected date is tentative and will be confirmed by our team.
-                  </DialogDescription>
+                  <InlineWidget
+                    url="https://calendly.com/egdiel-eplumbingandsewer/30min?hide_event_type_details=1&hide_gdpr_banner=1"
+                  />
                 </DialogHeader>
-                <form onSubmit={handleScheduleSubmit} className="grid gap-4 mt-4">
-                  <input
-                    type="text"
-                    placeholder="Your Name"
-                    value={formData.name}
-                    onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                    className="border border-gray-300 p-3 rounded-xl shadow-sm"
-                    required
-                  />
-                  <input
-                    type="email"
-                    placeholder="Your Email"
-                    value={formData.email}
-                    onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                    className="border border-gray-300 p-3 rounded-xl shadow-sm"
-                    required
-                  />
-                  <input
-                    type="date"
-                    value={formData.date}
-                    onChange={(e) => setFormData({ ...formData, date: e.target.value })}
-                    className="border border-gray-300 p-3 rounded-xl shadow-sm"
-                    required
-                  />
-                  <textarea
-                    rows={5}
-                    placeholder="Describe the issue or service needed"
-                    value={formData.message}
-                    onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                    className="border border-gray-300 p-3 rounded-xl shadow-sm"
-                  ></textarea>
-                  <Button type="submit" className="bg-blue-700 text-white">
-                    Confirm Booking
-                  </Button>
-                </form>
               </DialogContent>
             </Dialog>
           </div>
