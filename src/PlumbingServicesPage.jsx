@@ -286,7 +286,7 @@ export default function PlumbingServicesPage() {
             </div>
 
             {/* Thumbnails */}
-            <div className="flex mt-6 gap-3 overflow-x-auto px-2 scrollbar-hide">
+            <div className="flex mt-6 gap-3 overflow-x-auto px-2">
               {galleryImages.map((img, idx) => (
                 <button
                   key={idx}
@@ -297,7 +297,7 @@ export default function PlumbingServicesPage() {
                   <img
                     src={`/images/gallery/${img}`}
                     alt={`Thumbnail ${idx + 1}`}
-                    className="w-20 h-14 object-cover object-center rounded-sm"
+                    className="min-w-[80px] h-auto aspect-[4/3] object-cover object-center rounded-sm"
                   />
                 </button>
               ))}
