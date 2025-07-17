@@ -1,1 +1,7 @@
 @import "tailwindcss";
+@media (min-width: 640px) {
+  /* Apply fixed background only on screens >= 640px (sm breakpoint) */
+  .bg-fixed-desktop {
+    background-attachment: fixed;
+  }
+}

@@ -162,7 +162,7 @@ export default function PlumbingServicesPage() {
       {/* Padding for fixed header */}
       <div className="pt-28">
         {/* Hero Section */}
-        <section className="relative bg-fixed bg-center bg-cover bg-no-repeat py-16 text-center text-white" style={{ backgroundImage: "url('/images/background1.jpg')" }}>
+        <section className="relative bg-fixed bg-center bg-cover bg-no-repeat py-16 text-center text-white bg-fixed-desktop" style={{ backgroundImage: "url('/images/background1.jpg')" }}>
           <div className="bg-white/30 backdrop-blur-md p-6 rounded-xl shadow-md inline-block mx-auto text-blue-700">
             <h2 className="text-4xl font-semibold mb-6">Reliable Plumbing Services</h2>
             <p className="text-lg mb-6 max-w-xl mx-auto">
