@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Star } from "lucide-react";
-
+import { YelpBadge } from "./ui/yelpBadge.jsx";
 const reviews = [
     {
       text: "E Plumbing saved the day! Fast, clean, and very professional.",
@@ -69,14 +69,7 @@ export function ReviewSection() {
           >
             View on Google
           </a>
-          <a
-            href="https://www.yelp.com/search?find_desc=E+Plumbing+%26+Sewer"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-red-600 underline"
-          >
-            View on Yelp
-          </a>
+          <YelpBadge />
         </div>
       </div>
     </section>

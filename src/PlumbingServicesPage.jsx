@@ -94,11 +94,12 @@ export default function PlumbingServicesPage() {
   return (
     <div className="min-h-screen bg-blue-50 text-gray-800">
       {/* Header */}
-      <header className="fixed top-0 left-0 w-full z-50 bg-white shadow-md p-4 sm:p-6 flex justify-between items-center">
+      <header className="fixed top-0 left-0 w-full z-50 bg-white shadow-md p-2 sm:p-4 flex justify-between items-center">
+
         <img
-          src="/images/logo.jpeg"
+          src="/images/Logo64.svg"
           alt="E Plumbing and Sewer Logo"
-          className="h-20 sm:h-32 w-auto object-contain"
+          className="h-20 sm:h-24 w-auto object-contain"
         />
         <div className="flex flex-wrap sm:flex-nowrap items-center gap-2 sm:gap-4">
           <Dialog open={isContactOpen} onOpenChange={setIsContactOpen}>
@@ -134,7 +135,7 @@ export default function PlumbingServicesPage() {
       </header>
 
       {/* Padding for fixed header */}
-      <div className="pt-40">
+      <div className="pt-28">
         {/* Hero Section */}
         <section className="relative bg-fixed bg-center bg-cover bg-no-repeat py-16 text-center text-white" style={{ backgroundImage: "url('/images/background1.jpg')" }}>
           <div className="bg-white/30 backdrop-blur-md p-6 rounded-xl shadow-md inline-block mx-auto text-blue-700">
