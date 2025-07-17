@@ -13,3 +13,11 @@
   -ms-overflow-style: none;
   scrollbar-width: none;
 }
+.scroll-snap-align-center {
+  scroll-snap-align: center;
+}
+.no-vertical-scroll {
+  overflow-y: hidden !important;
+  scroll-padding-block: 0;
+  overscroll-behavior-y: contain;
+}

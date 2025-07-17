@@ -96,11 +96,22 @@ export default function PlumbingServicesPage() {
   useEffect(() => {
     const activeThumb = thumbnailRefs.current[currentImageSlide];
     if (activeThumb) {
-      activeThumb.scrollIntoView({
-        behavior: "smooth",
-        inline: "center",
-        block: "nearest",
-      });
+      // Only scroll horizontally, prevent vertical page scroll
+      const container = activeThumb.parentElement?.parentElement;
+
+      if (container) {
+        const containerRect = container.getBoundingClientRect();
+        const thumbRect = activeThumb.getBoundingClientRect();
+
+        const scrollLeft = container.scrollLeft;
+        const offsetLeft = activeThumb.offsetLeft;
+        const scrollTo = offsetLeft - container.clientWidth / 2 + activeThumb.clientWidth / 2;
+
+        container.scrollTo({
+          left: scrollTo,
+          behavior: "smooth"
+        });
+      }
     }
   }, [currentImageSlide]);
 
@@ -326,29 +337,32 @@ export default function PlumbingServicesPage() {
 
             {/* Thumbnails */}
             <div
-              className="flex mt-6 gap-2 overflow-x-auto px-2 no-scrollbar scroll-snap-x"
+              className="flex mt-6 gap-2 overflow-x-auto px-2 no-scrollbar"
               style={{
-                WebkitOverflowScrolling: "touch",
+                overflowX: "auto",
+                overflowY: "hidden",
                 scrollSnapType: "x mandatory",
+                WebkitOverflowScrolling: "touch",
+                scrollBehavior: "smooth"
               }}
             >
-              {galleryImages.map((img, idx) => (
-                <button
-                  key={idx}
-                  ref={(el) => (thumbnailRefs.current[idx] = el)}
-                  onClick={() => setCurrentImageSlide(idx)}
-                  className={`flex-shrink-0 border-2 rounded-md overflow-hidden ${idx === currentImageSlide ? "border-blue-700" : "border-transparent"
-                    }`}
-                  style={{ scrollSnapAlign: "center" }}
-                >
-                  <img
-                    src={`/images/gallery/${img}`}
-                    alt={`Thumbnail ${idx + 1}`}
-                    className="w-20 h-16 object-cover object-center"
-                  />
-                </button>
-              ))}
-
+              <div className="flex w-max">
+                {galleryImages.map((img, idx) => (
+                  <button
+                    key={idx}
+                    ref={(el) => (thumbnailRefs.current[idx] = el)}
+                    onClick={() => setCurrentImageSlide(idx)}
+                    className={`flex-shrink-0 border-2 rounded-md overflow-hidden scroll-snap-align-center ${idx === currentImageSlide ? "border-blue-700" : "border-transparent"
+                      }`}
+                  >
+                    <img
+                      src={`/images/gallery/${img}`}
+                      alt={`Thumbnail ${idx + 1}`}
+                      className="w-20 h-16 object-cover object-center"
+                    />
+                  </button>
+                ))}
+              </div>
             </div>
           </div>
         </section>
