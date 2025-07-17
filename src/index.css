@@ -5,3 +5,11 @@
     background-attachment: fixed;
   }
 }
+/* Add to globals.css or as a Tailwind plugin */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}

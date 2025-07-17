@@ -1,6 +1,6 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { ReviewSection } from '@/components/ReviewSection';
 import { InlineWidget } from "react-calendly";
@@ -90,6 +90,19 @@ export default function PlumbingServicesPage() {
 
   const [touchStartX, setTouchStartX] = useState(0);
   const [touchEndX, setTouchEndX] = useState(0);
+
+  const thumbnailRefs = useRef([]);
+
+  useEffect(() => {
+    const activeThumb = thumbnailRefs.current[currentImageSlide];
+    if (activeThumb) {
+      activeThumb.scrollIntoView({
+        behavior: "smooth",
+        inline: "center",
+        block: "nearest",
+      });
+    }
+  }, [currentImageSlide]);
 
   return (
     <div className="min-h-screen bg-blue-50 text-gray-800">
@@ -312,21 +325,30 @@ export default function PlumbingServicesPage() {
             </div>
 
             {/* Thumbnails */}
-            <div className="flex mt-6 gap-3 overflow-x-auto px-2">
+            <div
+              className="flex mt-6 gap-2 overflow-x-auto px-2 no-scrollbar scroll-snap-x"
+              style={{
+                WebkitOverflowScrolling: "touch",
+                scrollSnapType: "x mandatory",
+              }}
+            >
               {galleryImages.map((img, idx) => (
                 <button
                   key={idx}
+                  ref={(el) => (thumbnailRefs.current[idx] = el)}
                   onClick={() => setCurrentImageSlide(idx)}
-                  className={`border-2 rounded-md overflow-hidden ${idx === currentImageSlide ? "border-blue-700" : "border-transparent"
+                  className={`flex-shrink-0 border-2 rounded-md overflow-hidden ${idx === currentImageSlide ? "border-blue-700" : "border-transparent"
                     }`}
+                  style={{ scrollSnapAlign: "center" }}
                 >
                   <img
                     src={`/images/gallery/${img}`}
                     alt={`Thumbnail ${idx + 1}`}
-                    className="min-w-[80px] h-auto aspect-[4/3] object-cover object-center rounded-sm"
+                    className="w-20 h-16 object-cover object-center"
                   />
                 </button>
               ))}
+
             </div>
           </div>
         </section>
