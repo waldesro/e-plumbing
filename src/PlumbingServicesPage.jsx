@@ -94,38 +94,37 @@ export default function PlumbingServicesPage() {
   return (
     <div className="min-h-screen bg-blue-50 text-gray-800">
       {/* Header */}
-      <header className="fixed top-0 left-0 w-full z-50 bg-white shadow-md p-2 sm:p-4 flex justify-between items-center">
-        <div className="flex flex-wrap sm:flex-nowrap items-center gap-2 sm:gap-4">
-          <div className="flex-shrink-0"></div>
+      <header className="fixed top-0 left-0 w-full z-50 bg-white shadow-md p-4">
+        <div className="flex flex-col sm:flex-row justify-between items-center gap-3 sm:gap-6">
           <img
             src="/images/Logo64.svg"
             alt="E Plumbing and Sewer Logo"
             className="h-20 sm:h-24 w-auto object-contain"
           />
-        </div>
-        <div className="flex flex-wrap sm:flex-nowrap items-center gap-2 sm:gap-4">
-          <Dialog open={isContactOpen} onOpenChange={setIsContactOpen}>
-            <DialogTrigger asChild>
-              <Button className="bg-blue-700 text-white text-sm" onClick={() => setIsContactOpen(true)}>
-                Contact Us
-              </Button>
-            </DialogTrigger>
-            <DialogContent className="max-w-lg">
-              <DialogHeader>
-                <DialogTitle>Contact Us</DialogTitle>
-                <DialogDescription>
-                  We'd love to hear from you. Fill out the form below.
-                </DialogDescription>
-              </DialogHeader>
-              <form className="grid gap-4 mt-4">
-                <input type="text" placeholder="Your Name" className="border border-gray-300 p-3 rounded-xl shadow-sm" />
-                <input type="email" placeholder="Your Email" className="border border-gray-300 p-3 rounded-xl shadow-sm" />
-                <textarea rows={5} placeholder="Your Message" className="border border-gray-300 p-3 rounded-xl shadow-sm"></textarea>
-                <Button className="bg-blue-700 text-white">Send Message</Button>
-              </form>
-            </DialogContent>
-          </Dialog>
-          <div className="whitespace-nowrap text-md">
+
+          <div className="flex flex-col sm:flex-row items-center gap-2 sm:gap-4">
+            <Dialog open={isContactOpen} onOpenChange={setIsContactOpen}>
+              <DialogTrigger asChild>
+                <Button className="bg-blue-700 text-white text-sm" onClick={() => setIsContactOpen(true)}>
+                  Contact Us
+                </Button>
+              </DialogTrigger>
+              <DialogContent className="max-w-lg">
+                <DialogHeader>
+                  <DialogTitle>Contact Us</DialogTitle>
+                  <DialogDescription>
+                    We'd love to hear from you. Fill out the form below.
+                  </DialogDescription>
+                </DialogHeader>
+                <form className="grid gap-4 mt-4">
+                  <input type="text" placeholder="Your Name" className="border border-gray-300 p-3 rounded-xl shadow-sm" />
+                  <input type="email" placeholder="Your Email" className="border border-gray-300 p-3 rounded-xl shadow-sm" />
+                  <textarea rows={5} placeholder="Your Message" className="border border-gray-300 p-3 rounded-xl shadow-sm"></textarea>
+                  <Button className="bg-blue-700 text-white">Send Message</Button>
+                </form>
+              </DialogContent>
+            </Dialog>
+
             <a
               href="tel:3147660395"
               className="text-md text-blue-700 hover:underline whitespace-nowrap"
@@ -135,6 +134,7 @@ export default function PlumbingServicesPage() {
           </div>
         </div>
       </header>
+
 
       {/* Padding for fixed header */}
       <div className="pt-28">
