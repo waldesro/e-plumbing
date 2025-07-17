@@ -93,19 +93,26 @@ export default function PlumbingServicesPage() {
 
   return (
     <div className="min-h-screen bg-blue-50 text-gray-800">
-      {/* Header */}
       <header className="fixed top-0 left-0 w-full z-50 bg-white shadow-md p-4">
-        <div className="flex flex-col sm:flex-row justify-between items-center gap-3 sm:gap-6">
+        <div className="flex items-center justify-between flex-wrap sm:flex-nowrap gap-3 sm:gap-6">
+
+          {/* Logo */}
           <img
             src="/images/Logo64.svg"
             alt="E Plumbing and Sewer Logo"
             className="h-20 sm:h-24 w-auto object-contain"
           />
 
-          <div className="flex flex-col sm:flex-row items-center gap-2 sm:gap-4">
+          {/* Contact + Phone Section */}
+          <div className="flex flex-col items-end sm:flex-row sm:items-center sm:ml-auto gap-1 sm:gap-4">
+
+            {/* Contact Us Button */}
             <Dialog open={isContactOpen} onOpenChange={setIsContactOpen}>
               <DialogTrigger asChild>
-                <Button className="bg-blue-700 text-white text-sm" onClick={() => setIsContactOpen(true)}>
+                <Button
+                  className="bg-blue-700 hover:bg-blue-800 text-white text-sm font-medium px-5 py-2 rounded-full shadow-md hover:shadow-lg transition-transform duration-200 transform hover:scale-105 active:scale-100"
+                  onClick={() => setIsContactOpen(true)}
+                >
                   Contact Us
                 </Button>
               </DialogTrigger>
@@ -125,12 +132,28 @@ export default function PlumbingServicesPage() {
               </DialogContent>
             </Dialog>
 
+            {/* Call Us */}
             <a
               href="tel:3147660395"
-              className="text-md text-blue-700 hover:underline whitespace-nowrap"
+              className="flex items-center text-sm text-blue-700 font-medium transition-all duration-200 hover:text-white hover:bg-blue-700 px-4 py-2 rounded-full hover:scale-105 active:scale-100 shadow-sm"
             >
-              Call Us: (314) 766-0395
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                className="h-5 w-5 mr-2"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                strokeWidth={2}
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M3 5a2 2 0 012-2h2.28a2 2 0 011.94 1.51l.27 1.1a2 2 0 01-.45 1.84L7.21 9.79a16.06 16.06 0 007 7l2.34-2.34a2 2 0 011.84-.45l1.1.27A2 2 0 0121 16.72V19a2 2 0 01-2 2h-1C9.06 21 3 14.94 3 7V5z"
+                />
+              </svg>
+              (314) 766-0395
             </a>
+
           </div>
         </div>
       </header>
