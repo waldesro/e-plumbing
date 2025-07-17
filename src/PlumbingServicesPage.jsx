@@ -95,12 +95,14 @@ export default function PlumbingServicesPage() {
     <div className="min-h-screen bg-blue-50 text-gray-800">
       {/* Header */}
       <header className="fixed top-0 left-0 w-full z-50 bg-white shadow-md p-2 sm:p-4 flex justify-between items-center">
-
-        <img
-          src="/images/Logo64.svg"
-          alt="E Plumbing and Sewer Logo"
-          className="h-20 sm:h-24 w-auto object-contain"
-        />
+        <div className="flex flex-wrap sm:flex-nowrap items-center gap-2 sm:gap-4">
+          <div className="flex-shrink-0"></div>
+          <img
+            src="/images/Logo64.svg"
+            alt="E Plumbing and Sewer Logo"
+            className="h-20 sm:h-24 w-auto object-contain"
+          />
+        </div>
         <div className="flex flex-wrap sm:flex-nowrap items-center gap-2 sm:gap-4">
           <Dialog open={isContactOpen} onOpenChange={setIsContactOpen}>
             <DialogTrigger asChild>
