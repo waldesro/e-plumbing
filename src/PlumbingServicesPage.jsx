@@ -25,6 +25,7 @@ import {
   ToiletIcon,
   AmbulanceIcon
 } from "lucide-react";
+import { ContactForm } from "./components/ui/contactForm";
 
 const galleryImages = [
   "img1.jpg",
@@ -140,19 +141,14 @@ export default function PlumbingServicesPage() {
                   Contact Us
                 </Button>
               </DialogTrigger>
-              <DialogContent className="max-w-lg">
+              <DialogContent className="max-w-lg text-blue-700">
                 <DialogHeader>
                   <DialogTitle>Contact Us</DialogTitle>
                   <DialogDescription>
-                    We'd love to hear from you. Fill out the form below.
+                    We'd love to hear from you. Fill out the form below. We do not retain any personal information.
                   </DialogDescription>
                 </DialogHeader>
-                <form className="grid gap-4 mt-4">
-                  <input type="text" placeholder="Your Name" className="border border-gray-300 p-3 rounded-xl shadow-sm" />
-                  <input type="email" placeholder="Your Email" className="border border-gray-300 p-3 rounded-xl shadow-sm" />
-                  <textarea rows={5} placeholder="Your Message" className="border border-gray-300 p-3 rounded-xl shadow-sm"></textarea>
-                  <Button className="bg-blue-700 text-white">Send Message</Button>
-                </form>
+                  <ContactForm onSuccess={() => setIsContactOpen(false)} />
               </DialogContent>
             </Dialog>
 
@@ -182,7 +178,6 @@ export default function PlumbingServicesPage() {
         </div>
       </header>
 
-
       {/* Padding for fixed header */}
       <div className="pt-28">
         {/* Hero Section */}
@@ -198,7 +193,7 @@ export default function PlumbingServicesPage() {
                   className="bg-blue-700 text-white px-6 py-3 text-lg rounded-xl shadow-md hover:bg-blue-800"
                   onClick={() => setIsScheduleOpen(true)}
                 >
-                  Schedule a Service
+                  Schedule a Consultation
                 </Button>
               </DialogTrigger>
               <DialogContent className="max-w-lg">
