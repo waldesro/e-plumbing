@@ -179,12 +179,12 @@ export default function PlumbingServicesPage() {
       </header>
 
       {/* Padding for fixed header */}
-      <div className="pt-28">
         <div className="
-            relative bg-fixed bg-center bg-cover bg-no-repeat 
-            bg-[url('/images/small_background.jpg')] 
-            sm:bg-[url('/images/background.jpg')] 
-            min-h-[400px] sm:min-h-[600px] lg:min-h-[800px]">
+          pt-28
+          relative bg-fixed bg-center bg-cover bg-no-repeat 
+          bg-[url('/images/small_background.jpg')] 
+          sm:bg-[url('/images/background.jpg')] 
+          min-h-[400px] sm:min-h-[600px] lg:min-h-[800px]">
           {/* Hero Section */}
           <section className="relative bg-center bg-cover bg-no-repeat py-24 sm:py-32 text-center text-white">
             {/* Content */}
@@ -384,6 +384,5 @@ export default function PlumbingServicesPage() {
           </footer>
         </div>
       </div>
-    </div >
   );
 }
