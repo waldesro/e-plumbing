@@ -148,13 +148,13 @@ export default function PlumbingServicesPage() {
                     We'd love to hear from you. Fill out the form below. We do not retain any personal information.
                   </DialogDescription>
                 </DialogHeader>
-                  <ContactForm onSuccess={() => setIsContactOpen(false)} />
+                <ContactForm onSuccess={() => setIsContactOpen(false)} />
               </DialogContent>
             </Dialog>
 
             {/* Call Us */}
             <a
-              href="tel:3147660395"
+              href="tel:866-337-5862"
               className="flex items-center text-sm text-blue-700 font-medium transition-all duration-200 hover:text-white hover:bg-blue-700 px-4 py-2 rounded-full hover:scale-105 active:scale-100 shadow-sm"
             >
               <svg
@@ -171,7 +171,7 @@ export default function PlumbingServicesPage() {
                   d="M3 5a2 2 0 012-2h2.28a2 2 0 011.94 1.51l.27 1.1a2 2 0 01-.45 1.84L7.21 9.79a16.06 16.06 0 007 7l2.34-2.34a2 2 0 011.84-.45l1.1.27A2 2 0 0121 16.72V19a2 2 0 01-2 2h-1C9.06 21 3 14.94 3 7V5z"
                 />
               </svg>
-              (314) 766-0395
+              (866)-3-E-PLUMB
             </a>
 
           </div>
@@ -180,37 +180,48 @@ export default function PlumbingServicesPage() {
 
       {/* Padding for fixed header */}
       <div className="pt-28">
+        <div className="relative bg-fixed bg-center bg-cover bg-no-repeat" style={{ backgroundImage: "url('/images/background1.jpg')" }}>
         {/* Hero Section */}
-        <section className="relative bg-fixed bg-center bg-cover bg-no-repeat py-16 text-center text-white bg-fixed-desktop" style={{ backgroundImage: "url('/images/background1.jpg')" }}>
-          <div className="bg-white/30 backdrop-blur-md p-6 rounded-xl shadow-md inline-block mx-auto text-blue-700">
-            <h2 className="text-4xl font-semibold mb-6">Reliable Plumbing Services</h2>
-            <p className="text-lg mb-6 max-w-xl mx-auto">
-              From leaky faucets to full pipe installations — fast, friendly, and professional plumbing solutions in the Saint Louis area.
-            </p>
-            <Dialog open={isScheduleOpen} onOpenChange={setIsScheduleOpen}>
-              <DialogTrigger asChild>
-                <Button
-                  className="bg-blue-700 text-white px-6 py-3 text-lg rounded-xl shadow-md hover:bg-blue-800"
-                  onClick={() => setIsScheduleOpen(true)}
-                >
-                  Schedule a Consultation
-                </Button>
-              </DialogTrigger>
-              <DialogContent className="max-w-lg">
-                <DialogHeader>
-                  <DialogTitle>Schedule a Service</DialogTitle>
-                  <InlineWidget
-                    url="https://calendly.com/egdiel-eplumbingandsewer/30min?hide_event_type_details=1&hide_gdpr_banner=1"
-                  />
-                </DialogHeader>
-              </DialogContent>
-            </Dialog>
+        <section
+          className="relative bg-center bg-cover bg-no-repeat py-24 sm:py-32 text-center text-white"
+          // style={{ backgroundImage: "url('/images/background1.jpg')" }}
+        >
+
+          {/* Content */}
+          <div className="relative z-10 max-w-3xl mx-auto px-6">
+            <div className="bg-white/30 backdrop-blur-md rounded-2xl p-8 sm:p-10 shadow-xl border border-white/20">
+              <h1 className="text-4xl sm:text-5xl font-extrabold text-blue-900 leading-tight mb-4">
+                Reliable Plumbing Services
+              </h1>
+              <p className="text-lg sm:text-xl text-blue-800 mb-6">
+                From leaky faucets to full pipe installations — fast, friendly, and professional plumbing solutions in the Saint Louis area.
+              </p>
+              <Dialog open={isScheduleOpen} onOpenChange={setIsScheduleOpen}>
+                <DialogTrigger asChild>
+                  <Button
+                    className="bg-blue-700 hover:bg-blue-800 text-white px-6 py-3 text-lg rounded-xl shadow-lg transition duration-200"
+                    onClick={() => setIsScheduleOpen(true)}
+                  >
+                    Schedule a Consultation
+                  </Button>
+                </DialogTrigger>
+                <DialogContent className="max-w-lg">
+                  <DialogHeader>
+                    <DialogTitle>Schedule a Service</DialogTitle>
+                    <InlineWidget
+                      url="https://calendly.com/egdiel-eplumbingandsewer/30min?hide_event_type_details=1&hide_gdpr_banner=1"
+                    />
+                  </DialogHeader>
+                </DialogContent>
+              </Dialog>
+            </div>
           </div>
         </section>
+
         {/* About Section */}
         <section className="py-16 px-4 bg-white text-gray-800">
           <div className="max-w-4xl mx-auto text-center">
-            <h3 className="text-3xl font-bold mb-6 text-blue-700">Locally owned and operated.</h3>
+            <h1 className="text-4xl sm:text-5xl font-extrabold text-blue-900 leading-tight mb-4">Locally owned and operated.</h1>
             <p className="text-lg mb-4">
               E Plumbing & Sewer is a full-service plumbing company based in St. Louis, Missouri.
               Whether it’s an emergency call or a renovation, all customers are treated as though they were family.
@@ -226,8 +237,9 @@ export default function PlumbingServicesPage() {
         </section>
 
         {/* Services Section */}
-        <section className="py-16 px-4 max-w-6xl mx-auto">
-          <h3 className="text-3xl font-bold mb-6 text-blue-700 text-center">Our Services</h3>
+        <section className="py-16 px-4 bg-white text-gray-800">
+          <div className="max-w-4xl mx-auto text-center">
+          <h1 className="text-4xl sm:text-5xl font-extrabold text-blue-900 leading-tight mb-4 text-center">Our Services</h1>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             <Card className="text-center p-6">
               <CardContent>
@@ -286,11 +298,12 @@ export default function PlumbingServicesPage() {
               </CardContent>
             </Card>
           </div>
+          </div>
         </section>
         {/* Gallery Section */}
-        <section className="relative bg-fixed bg-center bg-cover bg-no-repeat py-16 px-4 text-white" style={{ backgroundImage: "url('/images/background1.jpg')" }}>
+        <section className="relative bg-fixed bg-center bg-cover bg-no-repeat py-16 px-4 text-white">
           <div className="max-w-6xl mx-auto bg-white/30 backdrop-blur-md rounded-xl shadow-lg p-6 border border-white/20">
-            <h3 className="text-3xl font-bold text-center mb-8 text-blue-700">Our Work Gallery</h3>
+            <h1 className="text-4xl sm:text-5xl font-extrabold text-blue-900 leading-tight mb-4 text-center">Our Work Gallery</h1>
 
             {/* Carousel with sliding animation */}
             <div
@@ -369,7 +382,8 @@ export default function PlumbingServicesPage() {
         <footer className="bg-white py-6 text-center text-sm text-gray-500">
           &copy; {new Date().getFullYear()} E Plumbing and Sewer, LLC. All rights reserved.
         </footer>
+        </div>
       </div>
-    </div>
+    </div >
   );
 }
