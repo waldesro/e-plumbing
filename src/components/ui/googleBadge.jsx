@@ -1,6 +1,4 @@
-import React from "react";
-
-export function GoogleReviewBadge({ rating = 4.9, reviewCount = 23 }) {
+export function GoogleBadge({ rating = 4.9, reviewCount = 23 }) {
     return (
         <a
             href="https://www.google.com/search?q=E+Plumbing+and+Sewer+St.+Louis+MO&hl=en#lrd=0xa60ee1f5d09eebcf:0xf88a4f5b01eacb63,1"

@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Star } from "lucide-react";
 import { YelpBadge } from "./ui/yelpBadge.jsx";
-import { GoogleReviewBadge } from "./ui/googleBadge.jsx";
+import { GoogleBadge } from "./ui/googleBadge.jsx";
 
 export function ReviewSection() {
   const [reviews, setReviews] = useState([]);
@@ -36,7 +36,7 @@ export function ReviewSection() {
         )} */}
         {/* Badges Side-by-Side */}
         <div className="flex flex-col sm:flex-row justify-center items-center gap-6">
-          <GoogleReviewBadge rating={5} reviewCount={1} />
+          <GoogleBadge rating={5} reviewCount={1} />
           <YelpBadge />
         </div>
       </div>
