@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Star } from "lucide-react";
 import { YelpBadge } from "./ui/yelpBadge.jsx";
-import { GoogleReviewBadge } from "./ui/googlebadge.jsx";
+import { GoogleReviewBadge } from "./ui/googleBadge.jsx";
 
 export function ReviewSection() {
   const [reviews, setReviews] = useState([]);
