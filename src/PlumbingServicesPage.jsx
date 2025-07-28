@@ -182,15 +182,11 @@ export default function PlumbingServicesPage() {
       <div className="pt-28">
         <div className="
             relative bg-fixed bg-center bg-cover bg-no-repeat 
-            bg-[url('/images/background1-mobile.jpg')] 
-            sm:bg-[url('/images/background1.jpg')] 
+            bg-[url('/images/small_background.jpg')] 
+            sm:bg-[url('/images/background.jpg')] 
             min-h-[400px] sm:min-h-[600px] lg:min-h-[800px]">
           {/* Hero Section */}
-          <section
-            className="relative bg-center bg-cover bg-no-repeat py-24 sm:py-32 text-center text-white"
-          // style={{ backgroundImage: "url('/images/background1.jpg')" }}
-          >
-
+          <section className="relative bg-center bg-cover bg-no-repeat py-24 sm:py-32 text-center text-white">
             {/* Content */}
             <div className="relative z-10 max-w-3xl mx-auto px-6">
               <div className="bg-white/30 backdrop-blur-md rounded-2xl p-8 sm:p-10 shadow-xl border border-white/20">
@@ -224,16 +220,16 @@ export default function PlumbingServicesPage() {
 
           {/* About Section */}
           <section className="py-16 px-4 bg-white text-gray-800">
-            <div className="max-w-4xl mx-auto text-center">
-              <h1 className="text-4xl sm:text-5xl font-extrabold text-blue-900 leading-tight mb-4">Locally owned and operated.</h1>
-              <p className="text-lg mb-4">
+            <div className="max-w-4xl mx-auto">
+              <h1 className="text-4xl sm:text-5xl font-extrabold text-blue-900 leading-tight mb-4 text-center">Locally owned and operated.</h1>
+              <p className="text-lg mb-4 text-justify">
                 E Plumbing & Sewer is a full-service plumbing company based in St. Louis, Missouri.
                 Whether it’s an emergency call or a renovation, all customers are treated as though they were family.
               </p>
-              <p className="text-lg mb-4">
+              <p className="text-lg mb-4 text-justify">
                 We aim to establish and maintain long-term relationships with every client by providing professional and top-quality services.
               </p>
-              <p className="text-lg mt-6 italic">
+              <p className="text-lg mt-6 italic text-justify">
                 Egdiel Tamayo, owner of E Plumbing & Sewer, is an experienced plumber with quality service always at the top of his mind.
                 His mission is excellence from beginning to end — from accurately assessing a problem to leaving the workspace meticulously clean.
               </p>
