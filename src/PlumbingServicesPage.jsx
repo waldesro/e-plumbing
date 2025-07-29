@@ -118,7 +118,7 @@ export default function PlumbingServicesPage() {
 
   return (
     <div className="min-h-screen bg-blue-50 text-gray-800">
-      <header className="fixed top-0 left-0 w-full z-50 bg-white shadow-md p-4">
+      <header className="fixed top-0 left-0 w-full z-50 bg-blue-50 shadow-md p-4">
         <div className="flex items-center justify-between flex-wrap sm:flex-nowrap gap-3 sm:gap-6">
 
           {/* Logo */}
@@ -179,210 +179,216 @@ export default function PlumbingServicesPage() {
       </header>
 
       {/* Padding for fixed header */}
-        <div className="
+      <div className="
           pt-28
-          relative bg-fixed bg-center bg-cover bg-no-repeat 
-          bg-[url('/images/small_background.jpg')] 
+          relative 
+          bg-center 
+          bg-no-repeat 
+          bg-cover 
+          sm:bg-fixed
+          bg-[length:auto_100%]      // New: prevents horizontal stretching
+          bg-[url('/images/mobile-background@2x.jpg')] 
           sm:bg-[url('/images/background.jpg')] 
-          min-h-[400px] sm:min-h-[600px] lg:min-h-[800px]">
-          {/* Hero Section */}
-          <section className="relative bg-center bg-cover bg-no-repeat py-24 sm:py-32 text-center text-white">
-            {/* Content */}
-            <div className="relative z-10 max-w-3xl mx-auto px-6">
-              <div className="bg-white/30 backdrop-blur-md rounded-2xl p-8 sm:p-10 shadow-xl border border-white/20">
-                <h1 className="text-4xl sm:text-5xl font-extrabold text-blue-900 leading-tight mb-4">
-                  Reliable Plumbing Services
-                </h1>
-                <p className="text-lg sm:text-xl text-blue-800 mb-6">
-                  From leaky faucets to full pipe installations — fast, friendly, and professional plumbing solutions in the Saint Louis area.
-                </p>
-                <Dialog open={isScheduleOpen} onOpenChange={setIsScheduleOpen}>
-                  <DialogTrigger asChild>
-                    <Button
-                      className="bg-blue-700 hover:bg-blue-800 text-white px-6 py-3 text-lg rounded-xl shadow-lg transition duration-200"
-                      onClick={() => setIsScheduleOpen(true)}
-                    >
-                      Schedule a Consultation
-                    </Button>
-                  </DialogTrigger>
-                  <DialogContent className="max-w-lg">
-                    <DialogHeader>
-                      <DialogTitle>Schedule a Service</DialogTitle>
-                      <InlineWidget
-                        url="https://calendly.com/egdiel-eplumbingandsewer/30min?hide_event_type_details=1&hide_gdpr_banner=1"
-                      />
-                    </DialogHeader>
-                  </DialogContent>
-                </Dialog>
-              </div>
-            </div>
-          </section>
-
-          {/* About Section */}
-          <section className="py-16 px-4 bg-white text-gray-800">
-            <div className="max-w-4xl mx-auto">
-              <h1 className="text-4xl sm:text-5xl font-extrabold text-blue-900 leading-tight mb-4 text-center">Locally owned and operated.</h1>
-              <p className="text-lg mb-4 text-justify">
-                E Plumbing & Sewer is a full-service plumbing company based in St. Louis, Missouri.
-                Whether it’s an emergency call or a renovation, all customers are treated as though they were family.
+          min-h-[300px] sm:min-h-[500px] lg:min-h-[700px]
+          ">
+        {/* Hero Section */}
+        <section className="relative bg-center bg-cover bg-no-repeat py-24 sm:py-32 text-center text-white">
+          {/* Content */}
+          <div className="relative z-10 max-w-3xl mx-auto px-6">
+            <div className="bg-white/30 backdrop-blur-md rounded-2xl p-8 sm:p-10 shadow-xl border border-white/20">
+              <h1 className="text-4xl sm:text-5xl font-extrabold text-blue-900 leading-tight mb-4">
+                Reliable Plumbing Services
+              </h1>
+              <p className="text-lg sm:text-xl text-blue-800 mb-6">
+                From leaky faucets to full pipe installations — fast, friendly, and professional plumbing solutions in the Saint Louis area.
               </p>
-              <p className="text-lg mb-4 text-justify">
-                We aim to establish and maintain long-term relationships with every client by providing professional and top-quality services.
-              </p>
-              <p className="text-lg mt-6 italic text-justify">
-                Egdiel Tamayo, owner of E Plumbing & Sewer, is an experienced plumber with quality service always at the top of his mind.
-                His mission is excellence from beginning to end — from accurately assessing a problem to leaving the workspace meticulously clean.
-              </p>
-            </div>
-          </section>
-
-          {/* Services Section */}
-          <section className="py-16 px-4 bg-white text-gray-800">
-            <div className="max-w-4xl mx-auto text-center">
-              <h1 className="text-4xl sm:text-5xl font-extrabold text-blue-900 leading-tight mb-4 text-center">Our Services</h1>
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-                <Card className="text-center p-6">
-                  <CardContent>
-                    <Wrench className="mx-auto text-blue-700" size={40} />
-                    <h3 className="text-xl font-semibold mt-4 mb-2">General Repairs</h3>
-                    <p>Quick fixes for leaks, clogs, and faulty fixtures.</p>
-                  </CardContent>
-                </Card>
-                <Card className="text-center p-6">
-                  <CardContent>
-                    <ShieldCheck className="mx-auto text-blue-700" size={40} />
-                    <h3 className="text-xl font-semibold mt-4 mb-2">New Constructions</h3>
-                    <p>Expert plumbing solutions for new builds and renovations.</p>
-                  </CardContent>
-                </Card>
-                <Card className="text-center p-6">
-                  <CardContent>
-                    <AmbulanceIcon className="mx-auto text-blue-700" size={40} />
-                    <h3 className="text-xl font-semibold mt-4 mb-2">Emergencies</h3>
-                    <p>Rapid response for urgent plumbing issues.</p>
-                  </CardContent>
-                </Card>
-                <Card className="text-center p-6">
-                  <CardContent>
-                    <Clock className="mx-auto text-blue-700" size={40} />
-                    <h3 className="text-xl font-semibold mt-4 mb-2">Routine Maintenance</h3>
-                    <p>Prevent future issues with regular system checkups.</p>
-                  </CardContent>
-                </Card>
-                <Card className="text-center p-6">
-                  <CardContent>
-                    <PhoneCall className="mx-auto text-blue-700" size={40} />
-                    <h3 className="text-xl font-semibold mt-4 mb-2">Free Estimates</h3>
-                    <p>No-obligation quotes to help you plan confidently.</p>
-                  </CardContent>
-                </Card>
-                <Card className="text-center p-6">
-                  <CardContent>
-                    <ToiletIcon className="mx-auto text-blue-700" size={40} />
-                    <h3 className="text-xl font-semibold mt-4 mb-2">Pipe Installation</h3>
-                    <p>Professional installation for new plumbing systems.</p>
-                  </CardContent>
-                </Card>
-                <Card className="text-center p-6">
-                  <CardContent>
-                    <ShowerHead className="mx-auto text-blue-700" size={40} />
-                    <h3 className="text-xl font-semibold mt-4 mb-2">Bathroom Remodeling</h3>
-                    <p>Upgrade your space with modern plumbing solutions.</p>
-                  </CardContent>
-                </Card>
-                <Card className="text-center p-6">
-                  <CardContent>
-                    <Thermometer className="mx-auto text-blue-700" size={40} />
-                    <h3 className="text-xl font-semibold mt-4 mb-2">Water Heater Services</h3>
-                    <p>Repair and replacement of all water heater types.</p>
-                  </CardContent>
-                </Card>
-              </div>
-            </div>
-          </section>
-          {/* Gallery Section */}
-          <section className="relative bg-fixed bg-center bg-cover bg-no-repeat py-16 px-4 text-white">
-            <div className="max-w-6xl mx-auto bg-white/30 backdrop-blur-md rounded-xl shadow-lg p-6 border border-white/20">
-              <h1 className="text-4xl sm:text-5xl font-extrabold text-blue-900 leading-tight mb-4 text-center">Our Work Gallery</h1>
-
-              {/* Carousel with sliding animation */}
-              <div
-                className="relative w-full max-h-[80vh] overflow-hidden rounded-xl flex items-center justify-center bg-white/10"
-                onTouchStart={(e) => setTouchStartX(e.touches[0].clientX)}
-                onTouchEnd={(e) => setTouchEndX(e.changedTouches[0].clientX)}
-              >
-                <div
-                  className="flex transition-transform duration-700 ease-in-out"
-                  style={{
-                    transform: `translateX(-${currentImageSlide * 100}%)`,
-                    width: `${galleryImages.length * 100}%`,
-                  }}
-                >
-                  {galleryImages.map((img, idx) => (
-                    <img
-                      key={idx}
-                      src={`/images/gallery/${img}`}
-                      alt={`Gallery image ${idx + 1}`}
-                      className="w-full h-auto max-h-[80vh] object-contain mx-auto flex-shrink-0 bg-white/10 rounded-lg"
+              <Dialog open={isScheduleOpen} onOpenChange={setIsScheduleOpen}>
+                <DialogTrigger asChild>
+                  <Button
+                    className="bg-blue-700 hover:bg-blue-800 text-white px-6 py-3 text-lg rounded-xl shadow-lg transition duration-200"
+                    onClick={() => setIsScheduleOpen(true)}
+                  >
+                    Schedule a Consultation
+                  </Button>
+                </DialogTrigger>
+                <DialogContent className="max-w-lg">
+                  <DialogHeader>
+                    <DialogTitle>Schedule a Service</DialogTitle>
+                    <InlineWidget
+                      url="https://calendly.com/egdiel-eplumbingandsewer/30min?hide_event_type_details=1&hide_gdpr_banner=1"
                     />
-                  ))}
-                </div>
+                  </DialogHeader>
+                </DialogContent>
+              </Dialog>
+            </div>
+          </div>
+        </section>
 
-                {/* Arrows */}
-                <button
-                  onClick={handlePrev}
-                  className="absolute top-1/2 left-4 transform -translate-y-1/2 bg-white/50 backdrop-blur-md text-blue-700 p-2 rounded-full shadow-md hover:bg-white"
-                >
-                  <ChevronLeft size={28} />
-                </button>
-                <button
-                  onClick={handleNext}
-                  className="absolute top-1/2 right-4 transform -translate-y-1/2 bg-white/50 backdrop-blur-md text-blue-700 p-2 rounded-full shadow-md hover:bg-white"
-                >
-                  <ChevronRight size={28} />
-                </button>
-              </div>
+        {/* About Section */}
+        <section className="py-16 px-4 bg-white text-gray-800">
+          <div className="max-w-4xl mx-auto">
+            <h1 className="text-4xl sm:text-5xl font-extrabold text-blue-900 leading-tight mb-4 text-center">Locally owned and operated.</h1>
+            <p className="text-lg mb-4 text-justify">
+              E Plumbing & Sewer is a full-service plumbing company based in St. Louis, Missouri.
+              Whether it’s an emergency call or a renovation, all customers are treated as though they were family.
+            </p>
+            <p className="text-lg mb-4 text-justify">
+              We aim to establish and maintain long-term relationships with every client by providing professional and top-quality services.
+            </p>
+            <p className="text-lg mt-6 italic text-justify">
+              Egdiel Tamayo, owner of E Plumbing & Sewer, is an experienced plumber with quality service always at the top of his mind.
+              His mission is excellence from beginning to end — from accurately assessing a problem to leaving the workspace meticulously clean.
+            </p>
+          </div>
+        </section>
 
-              {/* Thumbnails */}
+        {/* Services Section */}
+        <section className="py-16 px-4 bg-blue-50 text-gray-800">
+          <div className="max-w-4xl mx-auto text-center">
+            <h1 className="text-4xl sm:text-5xl font-extrabold text-blue-900 leading-tight mb-4 text-center">Our Services</h1>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+              <Card className="text-center p-6">
+                <CardContent>
+                  <Wrench className="mx-auto text-blue-700" size={40} />
+                  <h3 className="text-xl font-semibold mt-4 mb-2">General Repairs</h3>
+                  <p>Quick fixes for leaks, clogs, and faulty fixtures.</p>
+                </CardContent>
+              </Card>
+              <Card className="text-center p-6">
+                <CardContent>
+                  <ShieldCheck className="mx-auto text-blue-700" size={40} />
+                  <h3 className="text-xl font-semibold mt-4 mb-2">New Constructions</h3>
+                  <p>Expert plumbing solutions for new builds and renovations.</p>
+                </CardContent>
+              </Card>
+              <Card className="text-center p-6">
+                <CardContent>
+                  <AmbulanceIcon className="mx-auto text-blue-700" size={40} />
+                  <h3 className="text-xl font-semibold mt-4 mb-2">Emergencies</h3>
+                  <p>Rapid response for urgent plumbing issues.</p>
+                </CardContent>
+              </Card>
+              <Card className="text-center p-6">
+                <CardContent>
+                  <Clock className="mx-auto text-blue-700" size={40} />
+                  <h3 className="text-xl font-semibold mt-4 mb-2">Routine Maintenance</h3>
+                  <p>Prevent future issues with regular system checkups.</p>
+                </CardContent>
+              </Card>
+              <Card className="text-center p-6">
+                <CardContent>
+                  <PhoneCall className="mx-auto text-blue-700" size={40} />
+                  <h3 className="text-xl font-semibold mt-4 mb-2">Free Estimates</h3>
+                  <p>No-obligation quotes to help you plan confidently.</p>
+                </CardContent>
+              </Card>
+              <Card className="text-center p-6">
+                <CardContent>
+                  <ToiletIcon className="mx-auto text-blue-700" size={40} />
+                  <h3 className="text-xl font-semibold mt-4 mb-2">Pipe Installation</h3>
+                  <p>Professional installation for new plumbing systems.</p>
+                </CardContent>
+              </Card>
+              <Card className="text-center p-6">
+                <CardContent>
+                  <ShowerHead className="mx-auto text-blue-700" size={40} />
+                  <h3 className="text-xl font-semibold mt-4 mb-2">Bathroom Remodeling</h3>
+                  <p>Upgrade your space with modern plumbing solutions.</p>
+                </CardContent>
+              </Card>
+              <Card className="text-center p-6">
+                <CardContent>
+                  <Thermometer className="mx-auto text-blue-700" size={40} />
+                  <h3 className="text-xl font-semibold mt-4 mb-2">Water Heater Services</h3>
+                  <p>Repair and replacement of all water heater types.</p>
+                </CardContent>
+              </Card>
+            </div>
+          </div>
+        </section>
+        {/* Gallery Section */}
+        <section className="relative bg-fixed bg-center bg-cover bg-no-repeat py-16 px-4 text-white">
+          <div className="max-w-6xl mx-auto bg-white/30 backdrop-blur-md rounded-xl shadow-lg p-6 border border-white/20">
+            <h1 className="text-4xl sm:text-5xl font-extrabold text-blue-900 leading-tight mb-4 text-center">Our Work Gallery</h1>
+
+            {/* Carousel with sliding animation */}
+            <div
+              className="relative w-full max-h-[80vh] overflow-hidden rounded-xl flex items-center justify-center bg-white/10"
+              onTouchStart={(e) => setTouchStartX(e.touches[0].clientX)}
+              onTouchEnd={(e) => setTouchEndX(e.changedTouches[0].clientX)}
+            >
               <div
-                className="flex mt-6 gap-2 overflow-x-auto px-2 no-scrollbar"
+                className="flex transition-transform duration-700 ease-in-out"
                 style={{
-                  overflowX: "auto",
-                  overflowY: "hidden",
-                  scrollSnapType: "x mandatory",
-                  WebkitOverflowScrolling: "touch",
-                  scrollBehavior: "smooth"
+                  transform: `translateX(-${currentImageSlide * 100}%)`,
+                  width: `${galleryImages.length * 100}%`,
                 }}
               >
-                <div className="flex w-max">
-                  {galleryImages.map((img, idx) => (
-                    <button
-                      key={idx}
-                      ref={(el) => (thumbnailRefs.current[idx] = el)}
-                      onClick={() => setCurrentImageSlide(idx)}
-                      className={`flex-shrink-0 border-2 rounded-md overflow-hidden scroll-snap-align-center ${idx === currentImageSlide ? "border-blue-700" : "border-transparent"
-                        }`}
-                    >
-                      <img
-                        src={`/images/gallery/${img}`}
-                        alt={`Thumbnail ${idx + 1}`}
-                        className="w-20 h-16 object-cover object-center"
-                      />
-                    </button>
-                  ))}
-                </div>
+                {galleryImages.map((img, idx) => (
+                  <img
+                    key={idx}
+                    src={`/images/gallery/${img}`}
+                    alt={`Gallery image ${idx + 1}`}
+                    className="w-full h-auto max-h-[80vh] object-contain mx-auto flex-shrink-0 bg-white/10 rounded-lg"
+                  />
+                ))}
+              </div>
+
+              {/* Arrows */}
+              <button
+                onClick={handlePrev}
+                className="absolute top-1/2 left-4 transform -translate-y-1/2 bg-white/50 backdrop-blur-md text-blue-700 p-2 rounded-full shadow-md hover:bg-white"
+              >
+                <ChevronLeft size={28} />
+              </button>
+              <button
+                onClick={handleNext}
+                className="absolute top-1/2 right-4 transform -translate-y-1/2 bg-white/50 backdrop-blur-md text-blue-700 p-2 rounded-full shadow-md hover:bg-white"
+              >
+                <ChevronRight size={28} />
+              </button>
+            </div>
+
+            {/* Thumbnails */}
+            <div
+              className="flex mt-6 gap-2 overflow-x-auto px-2 no-scrollbar"
+              style={{
+                overflowX: "auto",
+                overflowY: "hidden",
+                scrollSnapType: "x mandatory",
+                WebkitOverflowScrolling: "touch",
+                scrollBehavior: "smooth"
+              }}
+            >
+              <div className="flex w-max">
+                {galleryImages.map((img, idx) => (
+                  <button
+                    key={idx}
+                    ref={(el) => (thumbnailRefs.current[idx] = el)}
+                    onClick={() => setCurrentImageSlide(idx)}
+                    className={`flex-shrink-0 border-2 rounded-md overflow-hidden scroll-snap-align-center ${idx === currentImageSlide ? "border-blue-700" : "border-transparent"
+                      }`}
+                  >
+                    <img
+                      src={`/images/gallery/${img}`}
+                      alt={`Thumbnail ${idx + 1}`}
+                      className="w-20 h-16 object-cover object-center"
+                    />
+                  </button>
+                ))}
               </div>
             </div>
-          </section>
+          </div>
+        </section>
 
-          {/* Reviews Section */}
-          <ReviewSection />
+        {/* Reviews Section */}
+        <ReviewSection />
 
-          {/* Footer */}
-          <footer className="bg-white py-6 text-center text-sm text-gray-500">
-            &copy; {new Date().getFullYear()} E Plumbing and Sewer, LLC. All rights reserved.
-          </footer>
-        </div>
+        {/* Footer */}
+        <footer className="bg-white py-6 text-center text-sm text-gray-500">
+          &copy; {new Date().getFullYear()} E Plumbing and Sewer, LLC. All rights reserved.
+        </footer>
       </div>
+    </div>
   );
 }
