@@ -2,7 +2,7 @@ import { useRef, useState } from "react";
 import emailjs from "@emailjs/browser";
 import ReCAPTCHA from "react-google-recaptcha";
 
-const RECAPTCHA_SITE_KEY = "6Ld5qYcrAAAAAHpjV0zAj6FXB4-pS0ZOf--vawHB";
+const RECAPTCHA_SITE_KEY = "6LfeSpMrAAAAAMMfdVtjwJcWgwj_b1FexO5syHWw";
 
 export function ContactForm({ onSuccess }) {
     const formRef = useRef(null);
