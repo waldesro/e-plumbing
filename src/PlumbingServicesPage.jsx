@@ -227,7 +227,7 @@ export default function PlumbingServicesPage() {
         {/* About Section */}
         <section className="py-16 px-4 bg-white text-gray-800">
           <div className="max-w-4xl mx-auto">
-            <h1 className="text-4xl sm:text-5xl font-extrabold text-blue-900 leading-tight mb-4 text-center">Locally owned and operated.</h1>
+            <h1 className="text-4xl sm:text-5xl font-extrabold text-blue-900 leading-tight mb-4 text-center">Locally owned and operated</h1>
             <p className="text-lg mb-4 text-justify">
               E Plumbing & Sewer is a full-service plumbing company based in St. Louis, Missouri.
               Whether it’s an emergency call or a renovation, all customers are treated as though they were family.
